@@ -23,7 +23,15 @@ The goals / steps of this project are the following:
 
 ###1. Describe your pipeline. As part of the description, explain how you modified the draw_lines() function.
 
-My pipeline consisted of 5 steps. First, I converted the images to grayscale, then I .... 
+My pipeline consisted of 8 steps.
+
+* Highlight white and yellow colors with a mask.
+* Normalize the RGB values.
+* Convert the image to grayscale.
+* Use a Gaussian blur.
+* Use the Canny function to highlight the edges.
+* Use Hough detection on the edges.
+* Draw lines on the original images.
 
 In order to draw a single line on the left and right lanes, I modified the draw_lines() function by ...
 
