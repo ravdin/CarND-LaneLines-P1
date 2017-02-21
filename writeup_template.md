@@ -15,7 +15,14 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./examples/grayscale.jpg "Grayscale"
+[image1]: ./examples/solidYellowCurve1_lanemask.jpg "Lane mask"
+[image2]: ./examples/solidYellowCurve1_normalized.jpg "Normalized"
+[image3]: ./examples/solidYellowCurve1_grayscale.jpg "Grayscale"
+[image4]: ./examples/solidYellowCurve1_gaussian.jpg "Gaussian Blur"
+[image5]: ./examples/solidYellowCurve1_canny.jpg "Canny"
+[image6]: ./examples/solidYellowCurve1_region.jpg "Region of interest"
+[image7]: ./examples/solidYellowCurve1_hough.jpg "Hough"
+[image8]: ./examples/solidYellowCurve1_out.jpg "Result"
 
 ---
 
@@ -25,31 +32,48 @@ The goals / steps of this project are the following:
 
 My pipeline consisted of 8 steps.
 
-* Highlight white and yellow colors with a mask.
-* Normalize the RGB values.
-* Convert the image to grayscale.
-* Use a Gaussian blur.
-* Use the Canny function to highlight the edges.
-* Use Hough detection on the edges.
-* Draw lines on the original images.
+1. Highlight white and yellow colors with a mask.
 
-In order to draw a single line on the left and right lanes, I modified the draw_lines() function by ...
+![alt_text][image1]
 
-If you'd like to include images to show how the pipeline works, here is how to include an image: 
+2. Normalize the RGB values.
 
-![alt text][image1]
+![alt_text][image2]
+
+3. Convert the image to grayscale.
+
+![alt_text][image3]
+
+4. Use a Gaussian blur.
+
+![alt_text][image4]
+
+5. Use the Canny function to highlight the edges.
+
+![alt_text][image5]
+
+6. Isolate the region of interest.
+
+![alt_text][image6]
+
+7. Use Hough detection on the edges.
+
+![alt_text][image7]
+
+8. Draw lines on the original images.
+
+![alt_text][image8]
+
+In order to draw a single line on the left and right lanes, I modified the draw_lines() function by segmenting the lines into left and right.  Left lines should have a negative slope and right lines should be positive.  I rejected lines with a slope between -0.333 and 0.333.  After segmenting the lines, I used regression on each side to calculate the best fit.  Finally, I used the function for the best fit to create a single line from the bottom of the image to 60% of the height.
 
 
 ###2. Identify potential shortcomings with your current pipeline
 
-
-One potential shortcoming would be what would happen when ... 
-
-Another shortcoming could be ...
-
+* Driving at night.
+* Driving in bad weather conditions, like heavy rain or snow.
+* Missing lines due to construction.
 
 ###3. Suggest possible improvements to your pipeline
 
-A possible improvement would be to ...
-
-Another potential improvement could be to ...
+* One potential improvement could be to use lines from previous frames if the calculation doesn't work.  It would be a close approximation if not much time has elapsed.
+* Another suggestion if the line doesn't work is to calculate based on the speed and trajectory of the car.
