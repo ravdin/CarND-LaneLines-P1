@@ -16,13 +16,13 @@ The goals / steps of this project are the following:
 [//]: # (Image References)
 
 [image1]: ./examples/solidYellowCurve1_lanemask.jpg "Lane mask"
-[image2]: ./examples/solidYellowCurve1_normalized.jpg "Normalized"
-[image3]: ./examples/solidYellowCurve1_grayscale.jpg "Grayscale"
-[image4]: ./examples/solidYellowCurve1_gaussian.jpg "Gaussian Blur"
-[image5]: ./examples/solidYellowCurve1_canny.jpg "Canny"
-[image6]: ./examples/solidYellowCurve1_region.jpg "Region of interest"
-[image7]: ./examples/solidYellowCurve1_hough.jpg "Hough"
-[image8]: ./examples/solidYellowCurve1_out.jpg "Result"
+[image2]: ./examples/solidYellowCurve2_normalized.jpg "Normalized"
+[image3]: ./examples/solidYellowCurve3_grayscale.jpg "Grayscale"
+[image4]: ./examples/solidYellowCurve4_gaussian.jpg "Gaussian Blur"
+[image5]: ./examples/solidYellowCurve5_canny.jpg "Canny"
+[image6]: ./examples/solidYellowCurve6_region.jpg "Region of interest"
+[image7]: ./examples/solidYellowCurve7_hough.jpg "Hough"
+[image8]: ./examples/solidYellowCurve8_out.jpg "Result"
 
 ---
 
